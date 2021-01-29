@@ -31,5 +31,10 @@ class Block:
         self.prevHash = prevHash
         self.data = data
 
-    
-            
+    def __str__(self):
+        s = 'prevHash: '+ self.prevHash + '\n'
+        s = s + 'data: ' + self.data + '\n'
+        s = s + 'time: ' + str(self.time) + '\n'
+        s = s + 'nonce: ' + str(self.nonce) + '\n'
+        s = s + 'bHash: ' + self.bHash + '\n'
+        return s
