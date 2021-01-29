@@ -21,15 +21,8 @@ class BlockChain:
     def validateBlockChain(self):
         valid = True
         b = self.blockChain[0]
-        if b.data != "genesis block":
+        if b != genesisBlock:
             valid = False
-            print(1)
-        if b.prevHash != "empty":
-            valid = False
-            print(2)
-        if b.bHash != b.compHash():
-            valid = False
-            print(3)
         temp = copy.deepcopy(b)
         lastHash = temp.compHash()
         if valid:
