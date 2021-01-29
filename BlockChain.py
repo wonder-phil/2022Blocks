@@ -1,9 +1,10 @@
 from Block import *
+import copy
 
 class BlockChain:
     blockChain = []
     genesisBlock = Block("empty","genesis block")
-    dataList = ["a","b","c"]
+    dataList = ["a","b","c","d","e","f","g"]
 
     def compBlockChain(self, totalBlocks, difficulty):
         newBlock = self.genesisBlock
@@ -17,7 +18,7 @@ class BlockChain:
         for b in self.blockChain:
             print(b.bHash)
 
-    def validateChain(self):
+    def validateBlockChain(self):
         valid = True
         b = self.blockChain[0]
         if b.data != "genesis block":
@@ -29,15 +30,15 @@ class BlockChain:
         if b.bHash != b.compHash():
             valid = False
             print(3)
-        lastHash = b.compHash()
+        temp = copy.deepcopy(b)
+        lastHash = temp.compHash()
         if valid:
             for b in self.blockChain[1:]:
                 if b.prevHash != lastHash:
                     valid = False
-                    print(b.bHash)
                 else:
-                    lastHash = b.compHash()
-                    print(b.bHash)
+                    temp = copy.deepcopy(b)
+                    lastHash = temp.compHash()
                 
         return valid
             
