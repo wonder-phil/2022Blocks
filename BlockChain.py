@@ -21,7 +21,7 @@ class BlockChain:
     def validateBlockChain(self):
         valid = True
         b = self.blockChain[0]
-        if b != genesisBlock:
+        if b != self.genesisBlock:
             valid = False
         temp = copy.deepcopy(b)
         lastHash = temp.compHash()
@@ -34,5 +34,8 @@ class BlockChain:
                     lastHash = temp.compHash()
                 
         return valid
-            
+
+    def removeBlockChain(self):
+        blockChain.clear()
+        
     
