@@ -4,8 +4,7 @@ import hashlib
 class Block:
     hashFunction = ""
     bHash = ""
-    def __init__(self,diff,prevHash, data):
-        self.difficulty = diff
+    def __init__(self,prevHash, data):
         self.prevHash = prevHash
         self.data = data
         self.time = datetime.datetime.now()
