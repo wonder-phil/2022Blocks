@@ -24,7 +24,7 @@ class Block:
         while self.bHash[0:diff] != self.target:
             self.nonce = self.nonce + 1
             self.compHash()
-        print("Block mined: ", self.bHash)
+        #print("Block mined: ", self.bHash)
         return self
 
     def update(self,prevHash,data):
