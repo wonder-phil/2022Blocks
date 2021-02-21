@@ -7,13 +7,12 @@ class Block:
     def __init__(self,prevHash, data):
         self.prevHash = prevHash
         self.data = data
-        self.time = datetime.datetime.now()
         self.nonce = 0
         self.bHash = self.compHash()
 
     def compHash(self):
         hashFunction = hashlib.new('sha256')
-        myStr = str(self.prevHash)+str(self.data)+str(self.time)+str(self.nonce)
+        myStr = str(self.prevHash)+str(self.data)+str(self.nonce)
         myBytes = myStr.encode()
         hashFunction.update(myBytes)
         self.bHash = hashFunction.hexdigest()
@@ -34,7 +33,6 @@ class Block:
     def __str__(self):
         s = 'prevHash: '+ self.prevHash + '\n'
         s = s + 'data: ' + self.data + '\n'
-        s = s + 'time: ' + str(self.time) + '\n'
         s = s + 'nonce: ' + str(self.nonce) + '\n'
         s = s + 'bHash: ' + self.bHash + '\n'
         return s
