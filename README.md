@@ -2,5 +2,5 @@
 
 #
 # Block.py is a basic block
-# SmallBlockChain.py is a very basic clockchain
+# BlockChain.py is a very basic clockchain
 #
