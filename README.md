@@ -1,4 +1,4 @@
-# CCWC2021_Blocks
+# 2021_Blocks
 
 #
 # Block.py is a basic block
